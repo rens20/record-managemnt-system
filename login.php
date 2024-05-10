@@ -1,28 +1,24 @@
 <?php
-
 require_once __DIR__ . '../config/configuration.php';
 require_once __DIR__ . '../config/validation.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-     $username = $_POST['username'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm = $_POST['confirm'];
 
-
-  // Validate login credentials
-    $admin = ValidateLogin($email, $password,$username,$confirm);
+    $admin = ValidateLogin($email, $password, $username, $confirm);
 
     if (!empty($admin)) {
-      // Redirect to admin.php if login is successful
-      header('Location:admin.php');
-      exit;
+        header('Location: admin.php');
+        exit;
     } else {
-      echo '<script>alert("Login failed!");</script>';
+        echo '<script>alert("Invalid username, email, password, or confirm password!");</script>';
     }
-  }
-
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <span class="text-xl font-bold text-green-600">EJS Memorial Services</span>
             </div>
             <br>
-      <form action="admin.php" method="POST">
+      <form action="" method="POST">
         <div class="mb-4">
           <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
           <input type="text" id="username" name="username" required placeholder="Enter your username" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">

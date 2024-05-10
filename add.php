@@ -4,17 +4,17 @@ require_once __DIR__ . '../config/validation.php'; // Corrected the path for val
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $billing = $_POST['billing'];
     $contact = $_POST['contact'];
     $age = $_POST['age'];
     $sex = $_POST['sex'];
 
     // Prepare the SQL statement using placeholders to avoid SQL injection
-    $sql = "INSERT INTO users (name, email, contact, age, sex) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO users (name, billing, contact, age, sex) VALUES (?, ?, ?, ?, ?)";
 
     // Prepare and bind parameters to the statement
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssis", $name, $email, $contact, $age, $sex);
+    $stmt->bind_param("sssis", $name, $billing, $contact, $age, $sex);
 
     if ($stmt->execute()) {
      // Success message or actions
@@ -57,8 +57,8 @@ $conn->close();
                     <input type="text" required id="name" name="name" placeholder="Enter name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                 </div>
                 <div class="mb-4">
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email"  required  id="email" name="email" placeholder="Enter email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <label for="telephone" class="block text-sm font-medium text-gray-700">Billing</label>
+                    <input type="number" required id="billing" name="billing" placeholder="Enter the billing " class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                 </div>
                 <div class="mb-4">
                     <label for="contact" class="block text-sm font-medium text-gray-700">Contact</label>

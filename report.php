@@ -52,7 +52,7 @@ button{
                     <h1 class="text-center font-bold mb-9 text-3xl">Daily</h1>
                     <tr>
                         <th class="px-4 py-2">Name</th>
-                        <th class="px-4 py-2">Email</th>
+                        <th class="px-4 py-2">Billing</th>
                         <th class="px-4 py-2">Contact</th>
                         <th class="px-4 py-2">Age</th>
                         <th class="px-4 py-2">Sex</th>
@@ -73,7 +73,7 @@ if ($result_daily->num_rows > 0) {
     while ($row_daily = $result_daily->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td class='border px-4 py-2'>" . $row_daily['name'] . "</td>";
-                            echo "<td class='border px-4 py-2'>" . $row_daily['email'] . "</td>";
+                            echo "<td class='border px-4 py-2'>" . $row_daily['billing'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_daily['contact'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_daily['age'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_daily['sex'] . "</td>";
@@ -96,7 +96,7 @@ if ($result_daily->num_rows > 0) {
                     <h1 class="text-center font-bold mb-3 text-3xl">Weekly</h1>
                     <tr>
                         <th class="px-4 py-2">Name</th>
-                        <th class="px-4 py-2">Email</th>
+                        <th class="px-4 py-2">billing</th>
                         <th class="px-4 py-2">Contact</th>
                         <th class="px-4 py-2">Age</th>
                         <th class="px-4 py-2">Sex</th>
@@ -114,7 +114,7 @@ if ($result_daily->num_rows > 0) {
                         while ($row_weekly = $result_weekly->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td class='border px-4 py-2'>" . $row_weekly['name'] . "</td>";
-                            echo "<td class='border px-4 py-2'>" . $row_weekly['email'] . "</td>";
+                            echo "<td class='border px-4 py-2'>" . $row_weekly['billing'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_weekly['contact'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_weekly['age'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_weekly['sex'] . "</td>";
@@ -137,7 +137,7 @@ if ($result_daily->num_rows > 0) {
                     <h1 class="text-center font-bold mb-3 text-3xl">Monthly</h1>
                     <tr>
                         <th class="px-4 py-2">Name</th>
-                        <th class="px-4 py-2">Email</th>
+                        <th class="px-4 py-2">Billing</th>
                         <th class="px-4 py-2">Contact</th>
                         <th class="px-4 py-2">Age</th>
                         <th class="px-4 py-2">Sex</th>
@@ -156,7 +156,7 @@ if ($result_daily->num_rows > 0) {
                         while ($row_monthly = $result_monthly->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td class='border px-4 py-2'>" . $row_monthly['name'] . "</td>";
-                            echo "<td class='border px-4 py-2'>" . $row_monthly['email'] . "</td>";
+                            echo "<td class='border px-4 py-2'>" . $row_monthly['billing'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_monthly['contact'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_monthly['age'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_monthly['sex'] . "</td>";
@@ -182,11 +182,11 @@ if ($result_daily->num_rows > 0) {
                     <h1 class="text-center font-bold mb-3 text-3xl">Yearly</h1>
                     <tr>
                         <th class="px-4 py-2">Name</th>
-                        <th class="px-4 py-2">Email</th>
+                        <th class="px-4 py-2">billing</th>
                         <th class="px-4 py-2">Contact</th>
                         <th class="px-4 py-2">Age</th>
                         <th class="px-4 py-2">Sex</th>
-                        <th class="px-4 py-2">Actions</th> <!-- New column for actions -->
+                        <th class="px-4 py-2">Actions</th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -201,7 +201,7 @@ if ($result_daily->num_rows > 0) {
                         while ($row_yearly = $result_yearly->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td class='border px-4 py-2'>" . $row_yearly['name'] . "</td>";
-                            echo "<td class='border px-4 py-2'>" . $row_yearly['email'] . "</td>";
+                            echo "<td class='border px-4 py-2'>" . $row_yearly['billing'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_yearly['contact'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_yearly['age'] . "</td>";
                             echo "<td class='border px-4 py-2'>" . $row_yearly['sex'] . "</td>";

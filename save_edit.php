@@ -5,15 +5,15 @@ require_once __DIR__ . '../config/validation.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $email = $_POST['billing'];
     $contact = $_POST['contact'];
     $age = $_POST['age'];
     $sex = $_POST['sex'];
 
     // Update user data in the database
-    $updateSql = "UPDATE users SET name = ?, email = ?, contact = ?, age = ?, sex = ? WHERE id = ?";
+    $updateSql = "UPDATE users SET name = ?, billing = ?, contact = ?, age = ?, sex = ? WHERE id = ?";
     $stmt = $conn->prepare($updateSql);
-    $stmt->bind_param("sssssi", $name, $email, $contact, $age, $sex, $id);
+    $stmt->bind_param("sssssi", $name, $billing, $contact, $age, $sex, $id);
 
     if ($stmt->execute()) {
         echo '<script>
